@@ -1,13 +1,39 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFrameworks>net35;netstandard2.0;netstandard2.1</TargetFrameworks>
-  </PropertyGroup>
+	<PropertyGroup>
+		<Authors>IceCoffee</Authors>
+		<Company>LuoShuiTianYi</Company>
+		<Copyright>Copyright (c) 2022 IceCoffee</Copyright>
+		<Description>一个简单的、调用windows api 实现的反调试库</Description>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<PackageProjectUrl>https://github.com/1249993110/IceCoffee.AntiDebugEngine</PackageProjectUrl>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+		<Product>IceCoffee</Product>
+		<RepositoryUrl>https://github.com/1249993110/IceCoffee.AntiDebugEngine</RepositoryUrl>
+		<TargetFrameworks>net45</TargetFrameworks>
+		<Version>1.0.0.1</Version>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <None Update="AntiDebug_C.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
+	<PropertyGroup Condition="'$(Configuration)'=='Release'">
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\LICENSE">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+
+		<None Include="..\README.md" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="AntiDebug_C.dll">
+			<Pack>True</Pack>
+			<PackagePath>content</PackagePath>
+			<CopyToOutput>True</CopyToOutput>
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
 
 </Project>
